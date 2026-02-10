@@ -1,99 +1,75 @@
 import React from 'react';
 import { MapPin, Phone, Mail, Star } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
+
+import { useTranslation } from '../contexts/LanguageContext';
 
 const Contact: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
-    <section id="location" className="py-32 bg-white relative">
+    <section id="location" className="py-32 bg-rom-white relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
-        
-        {/* Header */}
-        <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-10">
-          <div>
-            <h2 className="font-serif text-4xl md:text-5xl font-bold mb-4 text-rom-black">Hier finden Sie uns</h2>
-            <p className="text-gray-400 text-lg">Auf dem Halmburger 16, Marburg</p>
-          </div>
-          
-          {/* Mock Google Reviews Badge - Heavily elevated */}
-          <div className="bg-white p-6 rounded-3xl shadow-3d-heavy flex items-center gap-6 border border-gray-50 hover:scale-105 transition-transform duration-300">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" className="w-10 h-10 grayscale opacity-60" />
+        <div className="flex flex-col md:flex-row items-start justify-between mb-16 gap-10">
+          <ScrollReveal className="max-w-xl">
+            <h2 className="font-serif text-5xl font-bold mb-4 text-rom-black tracking-tight">{t.contact.title}</h2>
+            <p className="text-gray-500 text-lg">Auf dem Halmburger 16, 35043 Marburg.</p>
+          </ScrollReveal>
+
+          <ScrollReveal delay={200} className="bg-white/60 backdrop-blur-md p-6 rounded-[32px] shadow-floating flex items-center gap-6 border border-rom-black/5">
+            <div className="w-14 h-14 bg-rom-accent/10 rounded-2xl flex items-center justify-center border border-rom-accent/20">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="G" className="w-6 h-6 opacity-80" />
+            </div>
             <div>
-              <div className="flex items-center gap-2">
-                <span className="font-bold text-2xl">4.9</span>
-                <div className="flex text-black">
-                  <Star size={18} fill="currentColor" />
-                  <Star size={18} fill="currentColor" />
-                  <Star size={18} fill="currentColor" />
-                  <Star size={18} fill="currentColor" />
-                  <Star size={18} fill="currentColor" />
+              <div className="flex items-center gap-1.5 mb-0.5">
+                <span className="font-black text-2xl tracking-tighter text-rom-black">4.9</span>
+                <div className="flex text-rom-accent">
+                  {[...Array(5)].map((_, i) => <Star key={i} size={14} fill="currentColor" />)}
                 </div>
               </div>
-              <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">42 Google Rezensionen</p>
+              <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">42 {t.contact.reviews}</p>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          
-          {/* Contact Cards with deep shadow */}
-          <div className="lg:col-span-1 space-y-8">
-            <div className="bg-white p-10 rounded-3xl shadow-3d-soft border border-gray-100 hover:shadow-3d-heavy transition-all duration-500 group">
-              <div className="w-14 h-14 bg-gray-50 rounded-2xl flex items-center justify-center mb-6 text-black border border-gray-100 shadow-inner group-hover:scale-110 transition-transform">
-                <MapPin size={28} />
-              </div>
-              <h3 className="font-serif font-bold text-xl mb-2">Zentrale Marburg</h3>
-              <p className="text-gray-500 leading-relaxed">
-                Auf dem Halmburger 16<br/>
-                D-35043 MARBURG
-              </p>
-            </div>
-
-            <div className="bg-white p-10 rounded-3xl shadow-3d-soft border border-gray-100 hover:shadow-3d-heavy transition-all duration-500 group">
-              <div className="w-14 h-14 bg-gray-50 rounded-2xl flex items-center justify-center mb-6 text-black border border-gray-100 shadow-inner group-hover:scale-110 transition-transform">
-                <Mail size={28} />
-              </div>
-              <h3 className="font-serif font-bold text-xl mb-2">Projektanfragen</h3>
-              <p className="text-gray-500">
-                <a href="mailto:service@romconstruction.de" className="hover:text-black transition-colors">service@romconstruction.de</a>
-              </p>
-            </div>
-
-            <div className="bg-white p-10 rounded-3xl shadow-3d-soft border border-gray-100 hover:shadow-3d-heavy transition-all duration-500 group">
-              <div className="w-14 h-14 bg-gray-50 rounded-2xl flex items-center justify-center mb-6 text-black border border-gray-100 shadow-inner group-hover:scale-110 transition-transform">
-                <Phone size={28} />
-              </div>
-              <h3 className="font-serif font-bold text-xl mb-2">Telefon</h3>
-              <p className="text-gray-500">
-                <a href="tel:+4964213508081" className="hover:text-black transition-colors font-bold text-lg">+49 6421 3508081</a>
-              </p>
-            </div>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+          <div className="space-y-6">
+            {[
+              { icon: <MapPin size={22} />, title: t.contact.address, detail: "Auf dem Halmburger 16\n35043 Marburg", href: null },
+              { icon: <Mail size={22} />, title: t.contact.email, detail: "service@romconstruction.de", href: "mailto:service@romconstruction.de" },
+              { icon: <Phone size={22} />, title: t.contact.phone, detail: "+49 6421 3508081", href: "tel:+4964213508081" }
+            ].map((item, i) => (
+              <ScrollReveal key={i} delay={i * 100} className="bg-white/60 backdrop-blur-md p-8 rounded-[32px] shadow-elevated border border-rom-black/5 group hover:shadow-floating transition-all duration-500 hover:-translate-y-1">
+                <div className="w-12 h-12 bg-rom-accent/10 rounded-xl flex items-center justify-center mb-6 text-rom-accent border border-rom-accent/20 group-hover:scale-110 transition-transform">
+                  {item.icon}
+                </div>
+                <h3 className="font-serif font-bold text-xl mb-2 text-rom-black">{item.title}</h3>
+                {item.href ? (
+                  <a href={item.href} className="text-gray-600 hover:text-rom-accent transition-colors block text-sm leading-relaxed whitespace-pre-line font-medium px-1 -mx-1 rounded">
+                    {item.detail}
+                  </a>
+                ) : (
+                  <p className="text-gray-600 text-sm leading-relaxed whitespace-pre-line">{item.detail}</p>
+                )}
+              </ScrollReveal>
+            ))}
           </div>
 
-          {/* Map Integration with 3D Frame */}
-          <div className="lg:col-span-2 h-[600px] bg-white rounded-[2rem] overflow-hidden shadow-3d-floating border-8 border-white relative">
-            <iframe 
-              title="Romconstruction Location"
-              width="100%" 
-              height="100%" 
-              frameBorder="0" 
-              scrolling="no" 
-              marginHeight={0} 
-              marginWidth={0} 
-              src="https://maps.google.com/maps?q=Auf%20dem%20Halmburger%2016%2C%2035043%20Marburg&t=&z=15&ie=UTF8&iwloc=&output=embed"
-              className="filter grayscale contrast-125 opacity-80 hover:opacity-100 transition-all duration-1000"
-            ></iframe>
-            
-            <div className="absolute top-10 right-10 bg-white/90 backdrop-blur-md p-8 rounded-2xl shadow-3d-heavy max-w-xs hidden md:block border border-white">
-               <p className="font-serif font-bold text-lg mb-4 border-b border-gray-100 pb-2 uppercase tracking-tighter">Bürozeiten</p>
-               <ul className="text-sm text-gray-500 space-y-3">
-                 <li className="flex justify-between font-medium"><span>Mo - Fr</span> <span className="text-black">08:00 - 18:00</span></li>
-                 <li className="flex justify-between opacity-50"><span>Sa</span> <span>Nach Vereinbarung</span></li>
-               </ul>
+          <ScrollReveal delay={400} className="lg:col-span-2 relative group">
+            <div className="h-full min-h-[500px] bg-white rounded-[40px] overflow-hidden shadow-floating border-[8px] border-white relative">
+              <iframe
+                title="Map"
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                src="https://maps.google.com/maps?q=Auf%20dem%20Halmburger%2016%2C%2035043%20Marburg&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                className="filter contrast-100 opacity-90 hover:opacity-100 transition-all duration-1000"
+              ></iframe>
             </div>
-          </div>
-
+          </ScrollReveal>
         </div>
-      </div>
-    </section>
+      </div >
+    </section >
   );
 };
 

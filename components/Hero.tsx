@@ -1,45 +1,54 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import ParticlesBackground from './ParticlesBackground';
+import ScrollReveal from './ScrollReveal';
+
+import { useTranslation } from '../contexts/LanguageContext';
 
 const Hero: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
-    <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-gradient-to-b from-white to-rom-gray-light contour-bg">
-      {/* 3D Decorative Elements (Subtle Grayscale) */}
-      <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-gray-100 rounded-full mix-blend-multiply filter blur-3xl opacity-60"></div>
-      <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-72 h-72 bg-gray-200 rounded-full mix-blend-multiply filter blur-3xl opacity-60"></div>
+    <section className="relative pt-32 pb-24 md:pt-52 md:pb-40 overflow-hidden bg-rom-white">
+      <ParticlesBackground />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full contour-bg opacity-40"></div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-gray-200 bg-white shadow-sm">
-            <h2 className="text-xs font-bold tracking-widest text-gray-500 uppercase">Romconstruction | Marburg</h2>
-          </div>
-          
-          <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-bold leading-tight text-rom-black mb-8 drop-shadow-sm">
-            Präzision am Bau. <br />
-            <span className="italic font-light text-gray-600 text-4xl md:text-6xl">Visionäre Architektur.</span>
-          </h1>
-          
-          <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Wir bauen heute für die Generationen von morgen. 
-            Meisterhafte Ausführung und verlässliche Projektplanung für Ihr Bauvorhaben.
-          </p>
+        <ScrollReveal>
+          <div className="max-w-5xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 mb-8 px-5 py-2 rounded-full border border-rom-black/5 bg-white/60 backdrop-blur-sm shadow-sm">
+              <span className="w-2 h-2 rounded-full bg-rom-accent animate-pulse"></span>
+              <h2 className="text-[10px] font-bold tracking-[0.2em] text-gray-600 uppercase">{t.hero.badge}</h2>
+            </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a 
-              href="#contact" 
-              className="group bg-rom-black text-white text-lg px-8 py-4 rounded-full inline-flex items-center hover:bg-gray-800 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1"
-            >
-              Projekt anfragen
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
-            <a 
-              href="tel:+4964213508081" 
-              className="bg-white text-gray-800 font-medium px-8 py-4 rounded-full hover:bg-gray-50 transition-all border border-gray-200 shadow-md hover:shadow-lg hover:-translate-y-1"
-            >
-              Beratungstermin
-            </a>
+            <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl font-black leading-[0.9] text-rom-black mb-10 tracking-tighter">
+              {t.hero.title} <br />
+              <span className="italic font-light text-rom-accent/80">{t.hero.subtitle}</span>
+            </h1>
+
+            <p className="text-xl md:text-2xl text-gray-600 mb-14 max-w-2xl mx-auto leading-relaxed font-light">
+              {t.hero.desc}
+            </p>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+              <a
+                href="#contact"
+                className="group relative bg-rom-accent text-white text-lg px-10 py-5 rounded-2xl flex items-center shadow-floating hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
+                <span className="relative z-10 font-bold">{t.hero.cta}</span>
+                <ArrowRight className="relative z-10 ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </a>
+
+              <a
+                href="tel:+4964213508081"
+                className="px-10 py-5 rounded-2xl text-rom-black font-semibold border border-gray-200 bg-white shadow-elevated hover:shadow-floating hover:-translate-y-1 transition-all duration-300"
+              >
+                +49 6421 3508081
+              </a>
+            </div>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

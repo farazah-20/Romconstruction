@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --color-rom-black: #3E2723;
+  /* Dunkelbraun (Text) */
+  --color-rom-white: #FFF8E1;
+  /* Creme/Beige (Background) */
+  --color-rom-accent: #2E7D32;
+  /* Waldgrün (Accent) */
+  --color-rom-ghost: #EFEBE9;
+  /* Warm gray/brown for depth */
+  --color-rom-edge: rgba(62, 39, 35, 0.05);
+  /* Dark brown edge for light mode */
+
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Merriweather', serif;
+
+  --shadow-deep: 0 30px 60px -12px rgba(62, 39, 35, 0.1), 0 18px 36px -18px rgba(62, 39, 35, 0.1);
+  --shadow-elevated: 0 20px 40px -10px rgba(62, 39, 35, 0.08), 0 1px 3px rgba(62, 39, 35, 0.05);
+  --shadow-floating: 0 45px 100px -20px rgba(62, 39, 35, 0.15);
+  --shadow-inner-3d: inset 0 2px 4px 0 rgba(62, 39, 35, 0.05);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FFF8E1;
+  color: #3E2723;
+  min-height: 100vh;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.depth-layer {
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2), -10px -10px 20px rgba(255, 255, 255, 0.05);
+}
+
+.contour-bg {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
