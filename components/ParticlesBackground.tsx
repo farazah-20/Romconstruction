@@ -54,8 +54,8 @@ const ParticlesBackground: React.FC = () => {
 
             draw() {
                 if (!ctx) return;
-                // Forest Green squares (Waldgrün) - High visibility
-                ctx.fillStyle = 'rgba(46, 125, 50, 0.8)';
+                // Baustellen-Orange squares - High visibility
+                ctx.fillStyle = 'rgba(244, 123, 32, 0.8)';
                 ctx.fillRect(this.x, this.y, this.size, this.size);
             }
         }
@@ -85,7 +85,7 @@ const ParticlesBackground: React.FC = () => {
                     if (distance < 150) {
                         ctx.beginPath();
                         // High visibility lines
-                        ctx.strokeStyle = `rgba(46, 125, 50, ${0.6 - distance / 800})`;
+                        ctx.strokeStyle = `rgba(244, 123, 32, ${0.6 - distance / 800})`;
                         ctx.lineWidth = 1.5;
 
                         // Orthogonal line (L-shape)

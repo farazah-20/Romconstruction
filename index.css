@@ -1,24 +1,24 @@
 @import "tailwindcss";
 
 @theme {
-  --color-rom-black: #3E2723;
-  /* Dunkelbraun (Text) */
-  --color-rom-white: #FFF8E1;
-  /* Creme/Beige (Background) */
-  --color-rom-accent: #2E7D32;
-  /* Waldgrün (Accent) */
-  --color-rom-ghost: #EFEBE9;
-  /* Warm gray/brown for depth */
-  --color-rom-edge: rgba(62, 39, 35, 0.05);
-  /* Dark brown edge for light mode */
+  --color-rom-black: #0A2E50;
+  /* Anthrazit-Dunkelblau (Text) */
+  --color-rom-white: #E0E5E0;
+  /* Beton-Hellgrau (Background) */
+  --color-rom-accent: #F47B20;
+  /* Baustellen-Orange (Accent) */
+  --color-rom-ghost: #CDD3CD;
+  /* Slightly darker gray for depth */
+  --color-rom-edge: rgba(10, 46, 80, 0.05);
+  /* Dark blue edge for light mode */
 
   --font-sans: 'Inter', sans-serif;
   --font-serif: 'Merriweather', serif;
 
-  --shadow-deep: 0 30px 60px -12px rgba(62, 39, 35, 0.1), 0 18px 36px -18px rgba(62, 39, 35, 0.1);
-  --shadow-elevated: 0 20px 40px -10px rgba(62, 39, 35, 0.08), 0 1px 3px rgba(62, 39, 35, 0.05);
-  --shadow-floating: 0 45px 100px -20px rgba(62, 39, 35, 0.15);
-  --shadow-inner-3d: inset 0 2px 4px 0 rgba(62, 39, 35, 0.05);
+  --shadow-deep: 0 30px 60px -12px rgba(10, 46, 80, 0.1), 0 18px 36px -18px rgba(10, 46, 80, 0.1);
+  --shadow-elevated: 0 20px 40px -10px rgba(10, 46, 80, 0.08), 0 1px 3px rgba(10, 46, 80, 0.05);
+  --shadow-floating: 0 45px 100px -20px rgba(10, 46, 80, 0.15);
+  --shadow-inner-3d: inset 0 2px 4px 0 rgba(10, 46, 80, 0.05);
 }
 
 html {
@@ -26,8 +26,8 @@ html {
 }
 
 body {
-  background-color: #FFF8E1;
-  color: #3E2723;
+  background-color: #E0E5E0;
+  color: #0A2E50;
   min-height: 100vh;
 }
 
