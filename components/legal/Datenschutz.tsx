@@ -47,25 +47,46 @@ const Datenschutz: React.FC = () => (
 
         <Abschnitt titel="4. Google Maps">
             <p>
-                Auf der Startseite können Sie eine Karte von Google Maps (Google Ireland Limited, Gordon House,
-                Barrow Street, Dublin 4, Irland) laden. Die Karte wird erst angezeigt, wenn Sie auf „Karte laden“
-                klicken. Erst dann werden Daten, insbesondere Ihre IP-Adresse, an Google übertragen; dabei kann es auch
-                zu einer Übermittlung an Google LLC in den USA kommen. Rechtsgrundlage ist Ihre Einwilligung nach
-                Art. 6 Abs. 1 lit. a DSGVO, die Sie durch den Klick erteilen und jederzeit für die Zukunft widerrufen
-                können, indem Sie die Seite neu laden. Der Link „Bewertungen – Auf Google ansehen“ führt zu Google
-                Maps; Daten werden erst übertragen, wenn Sie ihn anklicken. Es gelten die Datenschutzhinweise von
-                Google.
+                Im Bereich „Standort“ der Startseite kann eine Karte von Google Maps eingebunden werden. Anbieter ist
+                Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Die Karte wird nur geladen, wenn
+                Sie im Einwilligungsbanner „Google Maps erlauben“ wählen oder im Kartenbereich auf „Karte laden“ klicken
+                (dann nur für diesen Seitenaufruf). Erst dann werden Daten, insbesondere Ihre IP-Adresse sowie
+                Informationen zu Browser und aufgerufener Seite, an Google übertragen; Google kann dabei Cookies oder
+                ähnliche Technologien einsetzen.
+            </p>
+            <p>
+                Rechtsgrundlage ist Ihre Einwilligung nach § 25 Abs. 1 TDDDG und Art. 6 Abs. 1 lit. a DSGVO. Sie können
+                Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, indem Sie unten auf der Seite
+                „Cookie-Einstellungen“ öffnen und „Nur notwendige“ wählen. Dabei kann es zu einer Übermittlung von Daten
+                an Google LLC in den USA kommen. Google ist nach dem EU-US Data Privacy Framework zertifiziert; für die
+                USA besteht insoweit ein Angemessenheitsbeschluss der EU-Kommission. Der Link „Bewertungen – Auf Google
+                ansehen“ führt zu Google Maps; Daten werden erst übertragen, wenn Sie ihn anklicken. Es gelten die
+                Datenschutzhinweise von Google.
             </p>
         </Abschnitt>
 
-        <Abschnitt titel="5. Cookies, Tracking und Schriften">
+        <Abschnitt titel="5. Einwilligungsverwaltung">
             <p>
-                Wir setzen keine Cookies und keine Analyse- oder Tracking-Werkzeuge ein. Die Schriften werden von
+                Ihre Entscheidung im Einwilligungsbanner speichern wir ausschließlich lokal in Ihrem Browser (Local
+                Storage, Eintrag „consent“). Gespeichert werden nur, ob Sie Google Maps erlaubt haben, eine
+                Versionsnummer und der Zeitpunkt Ihrer Entscheidung. Der Eintrag wird nicht an uns übertragen und bleibt
+                gespeichert, bis Sie Ihre Browserdaten löschen. Über „Cookie-Einstellungen“ unten auf der Seite können
+                Sie Ihre Auswahl jederzeit ändern.
+            </p>
+            <p>
+                Die Speicherung ist unbedingt erforderlich, um Ihre Entscheidung zu beachten; Rechtsgrundlage ist § 25
+                Abs. 2 Nr. 2 TDDDG sowie Art. 6 Abs. 1 lit. c DSGVO in Verbindung mit Art. 7 Abs. 1 DSGVO.
+            </p>
+        </Abschnitt>
+
+        <Abschnitt titel="6. Cookies, Tracking und Schriften">
+            <p>
+                Wir selbst setzen keine Cookies und keine Analyse- oder Tracking-Werkzeuge ein. Die Schriften werden von
                 unserem eigenen Server geladen; es findet keine Verbindung zu Google Fonts statt.
             </p>
         </Abschnitt>
 
-        <Abschnitt titel="6. Ihre Rechte">
+        <Abschnitt titel="7. Ihre Rechte">
             <p>
                 Sie haben das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17),
                 Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch gegen
@@ -75,7 +96,7 @@ const Datenschutz: React.FC = () => (
             </p>
         </Abschnitt>
 
-        <Abschnitt titel="7. Beschwerderecht">
+        <Abschnitt titel="8. Beschwerderecht">
             <p>
                 Sie können sich bei einer Datenschutz-Aufsichtsbehörde beschweren. Zuständig für uns ist: Der Hessische
                 Beauftragte für Datenschutz und Informationsfreiheit (HBDI), Gustav-Stresemann-Ring 1, 65189 Wiesbaden.

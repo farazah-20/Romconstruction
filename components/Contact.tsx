@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail, Star, ArrowUpRight } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
+import { useConsent } from '../lib/consent';
 
 const GOOGLE_REVIEWS_URL = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent('Rom Construction Int GmbH Marburg');
 const MAP_EMBED_URL = 'https://maps.google.com/maps?q=Auf%20dem%20Halmburger%2016%2C%2035043%20Marburg&t=&z=15&ie=UTF8&iwloc=&output=embed';
@@ -10,7 +11,10 @@ import { useTranslation } from '../contexts/LanguageContext';
 
 const Contact: React.FC = () => {
   const { t } = useTranslation();
-  const [mapLoaded, setMapLoaded] = useState(false);
+  const [mapClicked, setMapClicked] = useState(false);
+  const consent = useConsent();
+  // Mit gespeicherter Einwilligung lädt die Karte automatisch, sonst nur nach Klick (nur dieses Mal).
+  const mapLoaded = mapClicked || consent?.maps === true;
 
   return (
     <section id="location" className="py-32 bg-rom-white relative overflow-hidden">
@@ -84,7 +88,7 @@ const Contact: React.FC = () => {
                   <p className="text-gray-600 text-sm leading-relaxed max-w-sm mb-8">{t.contact.map.notice}</p>
                   <button
                     type="button"
-                    onClick={() => setMapLoaded(true)}
+                    onClick={() => setMapClicked(true)}
                     className="bg-rom-black text-white px-10 py-4 rounded-2xl font-bold uppercase tracking-widest text-sm hover:bg-rom-accent hover:text-rom-black transition-all duration-300 shadow-elevated hover:shadow-floating hover:-translate-y-1"
                   >
                     {t.contact.map.load}

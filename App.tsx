@@ -10,6 +10,8 @@ import Footer from './components/Footer';
 import Impressum from './components/legal/Impressum';
 import Datenschutz from './components/legal/Datenschutz';
 
+import RouteHead from './components/RouteHead';
+import ConsentBanner from './components/ConsentBanner';
 import { LanguageProvider } from './contexts/LanguageContext';
 
 // Scrollt bei Navigation zum Anker (z. B. /#about) bzw. nach oben.
@@ -48,6 +50,7 @@ function App() {
     <LanguageProvider>
       <div className="min-h-screen bg-rom-white font-sans selection:bg-rom-black selection:text-white">
         <ScrollToHash />
+        <RouteHead />
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -56,6 +59,7 @@ function App() {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
         <Footer />
+        <ConsentBanner />
       </div>
     </LanguageProvider>
   );

@@ -14,8 +14,12 @@ const About: React.FC = () => {
           <ScrollReveal className="w-full lg:w-1/2 relative">
             <div className="relative z-20 rounded-[40px] overflow-hidden shadow-floating border-[12px] border-white">
               <img
-                src="/images/unternehmen-bauplanung.jpg"
-                alt="Modern Construction Architecture"
+                src="/images/unternehmen-bauplanung.webp"
+                alt="Bauplanung bei Romconstruction in Marburg"
+                width={1200}
+                height={675}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-[600px] object-cover hover:scale-105 transition-transform duration-1000"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
@@ -51,11 +55,11 @@ const About: React.FC = () => {
 
             <div className="mt-14 pt-10 border-t border-rom-black/10 flex gap-12">
               <div>
-                <h4 className="text-sm font-bold uppercase tracking-widest text-rom-black mb-2">{t.about.stats.reliable}</h4>
+                <h3 className="text-sm font-bold uppercase tracking-widest text-rom-black mb-2">{t.about.stats.reliable}</h3>
                 <p className="text-sm text-gray-600">{t.about.stats.onTime}</p>
               </div>
               <div>
-                <h4 className="text-sm font-bold uppercase tracking-widest text-rom-black mb-2">Exzellent</h4>
+                <h3 className="text-sm font-bold uppercase tracking-widest text-rom-black mb-2">Exzellent</h3>
                 <p className="text-sm text-gray-600">{t.about.stats.material}</p>
               </div>
             </div>

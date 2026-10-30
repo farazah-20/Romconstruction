@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 export const firma = {
     name: 'Rom Construction Int GmbH',
@@ -10,8 +10,6 @@ export const firma = {
     register: 'Amtsgericht Marburg',
     hrb: 'HRB 8698',
 };
-
-const STANDARD_TITEL = 'Romconstruction | Exzellenz im Bauwesen – Rom Construction Int GmbH, Marburg';
 
 /** Sichtbarer Platzhalter für vom Kunden noch zu ergänzende Angaben. */
 export const Platzhalter: React.FC<{ children: React.ReactNode }> = ({ children }) => (
@@ -27,11 +25,6 @@ export const Abschnitt: React.FC<{ titel: string; children: React.ReactNode }> =
 
 /** Gemeinsamer Rahmen der Rechtsseiten im bisherigen Seitenstil. */
 const Rechtsseite: React.FC<{ titel: string; children: React.ReactNode }> = ({ titel, children }) => {
-    useEffect(() => {
-        document.title = `${titel} – Rom Construction Int GmbH`;
-        return () => { document.title = STANDARD_TITEL; };
-    }, [titel]);
-
     return (
         <section className="py-32 px-6 bg-rom-white min-h-screen">
             <div className="container mx-auto max-w-3xl">

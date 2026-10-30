@@ -18,7 +18,7 @@ const Hero: React.FC = () => {
           <div className="max-w-5xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 mb-8 px-5 py-2 rounded-full border border-rom-black/5 bg-white/60 backdrop-blur-sm shadow-sm">
               <span className="w-2 h-2 rounded-full bg-rom-accent animate-pulse"></span>
-              <h2 className="text-[10px] font-bold tracking-[0.2em] text-gray-600 uppercase">{t.hero.badge}</h2>
+              <p className="text-[10px] font-bold tracking-[0.2em] text-gray-600 uppercase">{t.hero.badge}</p>
             </div>
 
             <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl font-black leading-[0.9] text-rom-black mb-10 tracking-tighter">

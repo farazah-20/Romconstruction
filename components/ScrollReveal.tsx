@@ -17,6 +17,10 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
     const ref = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
+        if (typeof IntersectionObserver === 'undefined') {
+            setIsVisible(true);
+            return;
+        }
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {

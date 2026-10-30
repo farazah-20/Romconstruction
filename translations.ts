@@ -7,7 +7,7 @@ export const translations = {
             services: 'Leistungen',
             location: 'Standort',
             project: 'Projekt anfragen',
-            legal: { impressum: 'Impressum', privacy: 'Datenschutz' },
+            legal: { impressum: 'Impressum', privacy: 'Datenschutz', cookies: 'Cookie-Einstellungen' },
             menu: { open: 'Menü öffnen', close: 'Menü schließen', language: 'Sprache' }
         },
         hero: {
@@ -61,6 +61,13 @@ export const translations = {
             successTitle: 'Vielen Dank!',
             successText: 'Ihr E-Mail-Programm wurde geöffnet. Bitte senden Sie die vorbereitete E-Mail dort ab.',
             mailSubject: 'Projektanfrage über romconstruction.de'
+        },
+        consent: {
+            title: 'Datenschutz-Einstellungen',
+            text: 'Diese Website verwendet keine Cookies für Werbung oder Statistik. Für die Karte im Bereich Standort kann Google Maps geladen werden – dabei werden Daten wie Ihre IP-Adresse an Google übertragen.',
+            privacy: 'Datenschutzerklärung',
+            necessary: 'Nur notwendige',
+            allowMaps: 'Google Maps erlauben'
         }
     },
     EN: {
@@ -69,7 +76,7 @@ export const translations = {
             services: 'Services',
             location: 'Location',
             project: 'Request Project',
-            legal: { impressum: 'Imprint', privacy: 'Privacy' },
+            legal: { impressum: 'Imprint', privacy: 'Privacy', cookies: 'Cookie settings' },
             menu: { open: 'Open menu', close: 'Close menu', language: 'Language' }
         },
         hero: {
@@ -123,6 +130,13 @@ export const translations = {
             successTitle: 'Thank you!',
             successText: 'Your e-mail program has been opened. Please send the prepared e-mail from there.',
             mailSubject: 'Project request via romconstruction.de'
+        },
+        consent: {
+            title: 'Privacy settings',
+            text: 'This website does not use cookies for advertising or statistics. Google Maps can be loaded for the map in the location section – data such as your IP address is transmitted to Google.',
+            privacy: 'Privacy policy',
+            necessary: 'Necessary only',
+            allowMaps: 'Allow Google Maps'
         }
     }
 };

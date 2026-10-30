@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { useTranslation } from '../contexts/LanguageContext';
+import { openConsentSettings } from '../lib/consent';
 
 const Footer: React.FC = () => {
   const { t } = useTranslation();
@@ -11,16 +12,17 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <Link to="/" className="block text-center md:text-left cursor-pointer">
-            <h4 className="font-serif font-bold text-xl mb-1 uppercase tracking-tighter text-rom-black">ROMCONSTRUCTION</h4>
+            <p className="font-serif font-bold text-xl mb-1 uppercase tracking-tighter text-rom-black">ROMCONSTRUCTION</p>
             <p className="text-xs text-gray-600 tracking-widest">BUILDING EXCELLENCE</p>
           </Link>
 
           <div className="flex gap-6 text-sm text-gray-600 font-bold uppercase tracking-widest">
             <Link to="/impressum" className="normal-case hover:text-rom-black transition-colors">{t.nav.legal.impressum}</Link>
             <Link to="/datenschutz" className="normal-case hover:text-rom-black transition-colors">{t.nav.legal.privacy}</Link>
+            <button type="button" onClick={openConsentSettings} className="normal-case font-bold hover:text-rom-black transition-colors">{t.nav.legal.cookies}</button>
           </div>
 
-          <div className="text-xs text-gray-500">
+          <div className="text-xs text-gray-600">
             &copy; {new Date().getFullYear()} Romconstruction. Alle Rechte vorbehalten.
           </div>
         </div>
