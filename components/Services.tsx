@@ -36,25 +36,25 @@ const Services: React.FC = () => {
         <div className="flex flex-col md:flex-row items-end justify-between mb-20 gap-8">
           <ScrollReveal className="max-w-xl">
             <h2 className="font-serif text-5xl font-bold mb-6 text-rom-black leading-tight">{t.services.title}</h2>
-            <p className="text-gray-500 text-lg">{t.services.desc}</p>
+            <p className="text-gray-600 text-lg">{t.services.desc}</p>
           </ScrollReveal>
           <div className="hidden md:block h-[1px] flex-grow mx-12 bg-gray-200"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
           {services.map((service, index) => (
             <ScrollReveal
               key={index}
               delay={index * 100}
-              className="group relative bg-white/5 backdrop-blur-sm rounded-[32px] p-10 transition-all duration-500 hover:-translate-y-4 shadow-elevated hover:shadow-floating border border-white/10"
+              className="group relative bg-white/5 backdrop-blur-sm rounded-[32px] p-8 md:p-10 xl:p-8 transition-all duration-500 hover:-translate-y-4 shadow-elevated hover:shadow-floating border border-white/10"
             >
               <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center mb-8 shadow-inner-3d border border-white/10 group-hover:scale-110 transition-transform duration-500">
                 <div className="text-rom-accent opacity-80 group-hover:opacity-100 transition-opacity">
                   {service.icon}
                 </div>
               </div>
-              <h3 className="font-serif text-2xl font-bold mb-4 text-rom-black">{service.title}</h3>
-              <p className="text-gray-500 leading-relaxed text-sm">
+              <h3 className="font-serif text-2xl xl:text-lg font-bold mb-4 text-rom-black hyphens-auto">{service.title}</h3>
+              <p className="text-gray-600 leading-relaxed text-sm hyphens-auto">
                 {service.description}
               </p>
             </ScrollReveal>

@@ -35,7 +35,7 @@ const Header: React.FC = () => {
           ROM<span className="text-rom-accent italic font-light">CONSTRUCTION</span>
         </Link>
 
-        <nav className="hidden md:flex items-center space-x-10">
+        <nav className="hidden lg:flex items-center space-x-10">
           {navLinks.map((link) => (
             <Link
               key={link.hash}
@@ -86,7 +86,7 @@ const Header: React.FC = () => {
         </nav>
 
         <button
-          className="md:hidden p-2 text-rom-black"
+          className="lg:hidden p-2 text-rom-black"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={mobileMenuOpen ? t.nav.menu.close : t.nav.menu.open}
           aria-expanded={mobileMenuOpen}
@@ -98,7 +98,7 @@ const Header: React.FC = () => {
 
       {/* Mobile Nav Overlay */}
       {mobileMenuOpen && (
-        <div id="mobile-menu" className="md:hidden absolute top-full left-0 w-full bg-rom-white border-b border-rom-ghost shadow-lg py-6 px-6 flex flex-col space-y-4 animate-in fade-in slide-in-from-top-5">
+        <div id="mobile-menu" className="lg:hidden absolute top-full left-0 w-full bg-rom-white border-b border-rom-ghost shadow-lg py-6 px-6 flex flex-col space-y-4 animate-in fade-in slide-in-from-top-5">
           {navLinks.map((link) => (
             <Link
               key={link.hash}

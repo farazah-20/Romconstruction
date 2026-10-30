@@ -28,7 +28,7 @@ const About: React.FC = () => {
             {/* Floating Info Tag */}
             <div className="absolute bottom-12 right-6 lg:right-0 lg:translate-x-1/2 z-30 bg-white/90 backdrop-blur-md p-8 rounded-3xl shadow-floating border border-white/20">
               <span className="block text-2xl font-serif font-black mb-1 text-rom-accent">Marburg</span>
-              <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">{t.about.location}</p>
+              <p className="text-[10px] font-bold text-gray-600 uppercase tracking-widest">{t.about.location}</p>
             </div>
           </ScrollReveal>
 
@@ -38,7 +38,7 @@ const About: React.FC = () => {
             </div>
             <h2 className="font-serif text-5xl md:text-6xl font-black mb-10 leading-[1.1] text-rom-black">
               {t.about.title} <br />
-              <span className="italic text-gray-400 font-light">{t.about.subtitle}</span>
+              <span className="italic text-gray-500 font-light">{t.about.subtitle}</span>
             </h2>
             <div className="space-y-8 text-gray-600 text-xl leading-relaxed font-light">
               <p className="relative pl-6 border-l-2 border-rom-accent">
@@ -52,11 +52,11 @@ const About: React.FC = () => {
             <div className="mt-14 pt-10 border-t border-rom-black/10 flex gap-12">
               <div>
                 <h4 className="text-sm font-bold uppercase tracking-widest text-rom-black mb-2">{t.about.stats.reliable}</h4>
-                <p className="text-sm text-gray-500">{t.about.stats.onTime}</p>
+                <p className="text-sm text-gray-600">{t.about.stats.onTime}</p>
               </div>
               <div>
                 <h4 className="text-sm font-bold uppercase tracking-widest text-rom-black mb-2">Exzellent</h4>
-                <p className="text-sm text-gray-500">{t.about.stats.material}</p>
+                <p className="text-sm text-gray-600">{t.about.stats.material}</p>
               </div>
             </div>
           </ScrollReveal>

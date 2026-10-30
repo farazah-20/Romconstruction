@@ -38,7 +38,7 @@ const Appointment: React.FC = () => {
         <div className="max-w-4xl mx-auto">
           <ScrollReveal className="text-center mb-16">
             <h2 className="font-serif text-5xl font-bold mb-6 text-rom-black">{t.appointment.title}</h2>
-            <p className="text-gray-500 text-lg">{t.appointment.subtitle}</p>
+            <p className="text-gray-600 text-lg">{t.appointment.subtitle}</p>
           </ScrollReveal>
 
           <ScrollReveal delay={200} className="bg-white/60 backdrop-blur-md rounded-[40px] p-10 md:p-14 shadow-floating border border-rom-black/5 relative overflow-hidden">
@@ -115,10 +115,10 @@ const Appointment: React.FC = () => {
                   {t.appointment.form.send}
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
-                <p className="text-xs text-gray-500 mr-1">{t.appointment.mailHint}</p>
+                <p className="text-xs text-gray-600 mr-1">{t.appointment.mailHint}</p>
               </div>
 
-              <p className="text-xs text-gray-500 leading-relaxed">
+              <p className="text-xs text-gray-600 leading-relaxed">
                 {t.appointment.privacyBefore}
                 <Link to="/datenschutz" className="underline underline-offset-4 hover:text-rom-accent transition-colors">{t.appointment.privacyLink}</Link>
                 {t.appointment.privacyAfter}

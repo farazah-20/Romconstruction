@@ -18,7 +18,7 @@ const Contact: React.FC = () => {
         <div className="flex flex-col md:flex-row items-start justify-between mb-16 gap-10">
           <ScrollReveal className="max-w-xl">
             <h2 className="font-serif text-5xl font-bold mb-4 text-rom-black tracking-tight">{t.contact.title}</h2>
-            <p className="text-gray-500 text-lg">Auf dem Halmburger 16, 35043 Marburg.</p>
+            <p className="text-gray-600 text-lg">Auf dem Halmburger 16, 35043 Marburg.</p>
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
@@ -36,7 +36,7 @@ const Contact: React.FC = () => {
                   <span className="font-black text-2xl tracking-tighter text-rom-black group-hover:text-rom-accent transition-colors">{t.contact.reviews}</span>
                   <ArrowUpRight size={16} className="text-rom-accent" />
                 </div>
-                <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">{t.contact.reviewsLink}</p>
+                <p className="text-[10px] font-bold text-gray-600 uppercase tracking-widest">{t.contact.reviewsLink}</p>
               </div>
             </a>
           </ScrollReveal>
@@ -89,7 +89,7 @@ const Contact: React.FC = () => {
                   >
                     {t.contact.map.load}
                   </button>
-                  <Link to="/datenschutz" className="mt-6 text-xs text-gray-500 underline underline-offset-4 hover:text-rom-accent transition-colors">
+                  <Link to="/datenschutz" className="mt-6 text-xs text-gray-600 underline underline-offset-4 hover:text-rom-accent transition-colors">
                     {t.contact.map.privacy}
                   </Link>
                 </div>

@@ -15,7 +15,7 @@ const STANDARD_TITEL = 'Romconstruction | Exzellenz im Bauwesen – Rom Construc
 
 /** Sichtbarer Platzhalter für vom Kunden noch zu ergänzende Angaben. */
 export const Platzhalter: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-    <span className="font-semibold text-rom-accent">[{children}]</span>
+    <span className="font-semibold text-[#B54100]">[{children}]</span>
 );
 
 export const Abschnitt: React.FC<{ titel: string; children: React.ReactNode }> = ({ titel, children }) => (
