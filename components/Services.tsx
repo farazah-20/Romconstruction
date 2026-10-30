@@ -49,7 +49,7 @@ const Services: React.FC = () => {
               className="group relative bg-white/5 backdrop-blur-sm rounded-[32px] p-10 transition-all duration-500 hover:-translate-y-4 shadow-elevated hover:shadow-floating border border-white/10"
             >
               <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center mb-8 shadow-inner-3d border border-white/10 group-hover:scale-110 transition-transform duration-500">
-                <div className="text-white opacity-80 group-hover:opacity-100 transition-opacity">
+                <div className="text-rom-accent opacity-80 group-hover:opacity-100 transition-opacity">
                   {service.icon}
                 </div>
               </div>

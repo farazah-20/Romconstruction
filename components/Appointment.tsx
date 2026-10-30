@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { CheckCircle, ArrowRight } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 import { useTranslation } from '../contexts/LanguageContext';
+
+const COMPANY_EMAIL = 'service@romconstruction.de';
 
 const Appointment: React.FC = () => {
   const { t } = useTranslation();
@@ -15,8 +18,18 @@ const Appointment: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const f = t.appointment.form;
+    const body = [
+      `${f.name}: ${formState.name}`,
+      `${f.email}: ${formState.email}`,
+      `${f.phone}: ${formState.phone || '-'}`,
+      '',
+      `${f.message}:`,
+      formState.message,
+    ].join('\n');
+    window.location.href = `mailto:${COMPANY_EMAIL}?subject=${encodeURIComponent(t.appointment.mailSubject)}&body=${encodeURIComponent(body)}`;
     setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 3000);
+    setTimeout(() => setIsSubmitted(false), 6000);
   };
 
   return (
@@ -35,8 +48,8 @@ const Appointment: React.FC = () => {
                   <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 border border-green-500/20">
                     <CheckCircle className="w-10 h-10 text-green-600" />
                   </div>
-                  <h3 className="font-serif text-3xl font-bold text-rom-black mb-2">Vielen Dank!</h3>
-                  <p className="text-gray-600">Wir melden uns in Kürze bei Ihnen.</p>
+                  <h3 className="font-serif text-3xl font-bold text-rom-black mb-2">{t.appointment.successTitle}</h3>
+                  <p className="text-gray-600">{t.appointment.successText}</p>
                 </div>
               </div>
             ) : null}
@@ -94,7 +107,7 @@ const Appointment: React.FC = () => {
                 ></textarea>
               </div>
 
-              <div className="pt-4 flex justify-end">
+              <div className="pt-4 flex flex-col items-end gap-3">
                 <button
                   type="submit"
                   className="group bg-rom-black text-white px-10 py-4 rounded-2xl font-bold uppercase tracking-widest hover:bg-rom-accent hover:text-rom-black transition-all duration-300 shadow-elevated hover:shadow-floating hover:-translate-y-1 flex items-center gap-3"
@@ -102,7 +115,14 @@ const Appointment: React.FC = () => {
                   {t.appointment.form.send}
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
+                <p className="text-xs text-gray-500 mr-1">{t.appointment.mailHint}</p>
               </div>
+
+              <p className="text-xs text-gray-500 leading-relaxed">
+                {t.appointment.privacyBefore}
+                <Link to="/datenschutz" className="underline underline-offset-4 hover:text-rom-accent transition-colors">{t.appointment.privacyLink}</Link>
+                {t.appointment.privacyAfter}
+              </p>
             </form>
           </ScrollReveal>
         </div>

@@ -1,20 +1,29 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Romconstruction – Website
 
-# Run and deploy your AI Studio app
+Website der Rom Construction Int GmbH, Bauunternehmen in Marburg (www.romconstruction.de).
+Vite, React 19, TypeScript, React Router und Tailwind CSS 4 (über PostCSS, Theme in `index.css`).
+Schriften (Inter, Merriweather) werden lokal über Fontsource eingebunden.
 
-This contains everything you need to run your app locally.
+## Entwicklung
 
-View your app in AI Studio: https://ai.studio/apps/drive/1I5PGGAcaZf4EpDsO7VnPrsB9UqfDuozh
+```bash
+npm install
+npm run dev        # http://127.0.0.1:5172
+npx tsc --noEmit   # Typprüfung
+npm run build      # Produktions-Build nach dist/
+npm run preview    # Build lokal ansehen
+```
 
-## Run Locally
+Texte (DE/EN) stehen in `translations.ts`, Rechtstexte unter `components/legal/`
+(`/impressum`, `/datenschutz`). Bilder liegen in `public/images/`.
 
-**Prerequisites:**  Node.js
+## Deployment
 
+Gehostet auf Vercel (Framework „Vite“, Build `npm run build`, Ausgabe `dist`).
+`vercel.json` leitet alle Pfade auf `index.html` um, damit `/impressum` und `/datenschutz` direkt aufrufbar sind.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Offen (vom Kunden zu ergänzen)
+
+- Geschäftsführer (Impressum, Datenschutz)
+- USt-IdNr. (Impressum)
+- Verantwortlicher nach § 18 Abs. 2 MStV (Impressum)

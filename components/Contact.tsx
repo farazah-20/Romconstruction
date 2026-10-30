@@ -1,11 +1,16 @@
-import React from 'react';
-import { MapPin, Phone, Mail, Star } from 'lucide-react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { MapPin, Phone, Mail, Star, ArrowUpRight } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
+
+const GOOGLE_REVIEWS_URL = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent('Rom Construction Int GmbH Marburg');
+const MAP_EMBED_URL = 'https://maps.google.com/maps?q=Auf%20dem%20Halmburger%2016%2C%2035043%20Marburg&t=&z=15&ie=UTF8&iwloc=&output=embed';
 
 import { useTranslation } from '../contexts/LanguageContext';
 
 const Contact: React.FC = () => {
   const { t } = useTranslation();
+  const [mapLoaded, setMapLoaded] = useState(false);
 
   return (
     <section id="location" className="py-32 bg-rom-white relative overflow-hidden">
@@ -16,19 +21,24 @@ const Contact: React.FC = () => {
             <p className="text-gray-500 text-lg">Auf dem Halmburger 16, 35043 Marburg.</p>
           </ScrollReveal>
 
-          <ScrollReveal delay={200} className="bg-white/60 backdrop-blur-md p-6 rounded-[32px] shadow-floating flex items-center gap-6 border border-rom-black/5">
-            <div className="w-14 h-14 bg-rom-accent/10 rounded-2xl flex items-center justify-center border border-rom-accent/20">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="G" className="w-6 h-6 opacity-80" />
-            </div>
-            <div>
-              <div className="flex items-center gap-1.5 mb-0.5">
-                <span className="font-black text-2xl tracking-tighter text-rom-black">4.9</span>
-                <div className="flex text-rom-accent">
-                  {[...Array(5)].map((_, i) => <Star key={i} size={14} fill="currentColor" />)}
-                </div>
+          <ScrollReveal delay={200}>
+            <a
+              href={GOOGLE_REVIEWS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white/60 backdrop-blur-md p-6 rounded-[32px] shadow-floating flex items-center gap-6 border border-rom-black/5 group"
+            >
+              <div className="w-14 h-14 bg-rom-accent/10 rounded-2xl flex items-center justify-center border border-rom-accent/20 text-rom-accent">
+                <Star size={22} fill="currentColor" />
               </div>
-              <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">42 {t.contact.reviews}</p>
-            </div>
+              <div>
+                <div className="flex items-center gap-1.5 mb-0.5">
+                  <span className="font-black text-2xl tracking-tighter text-rom-black group-hover:text-rom-accent transition-colors">{t.contact.reviews}</span>
+                  <ArrowUpRight size={16} className="text-rom-accent" />
+                </div>
+                <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">{t.contact.reviewsLink}</p>
+              </div>
+            </a>
           </ScrollReveal>
         </div>
 
@@ -57,19 +67,38 @@ const Contact: React.FC = () => {
 
           <ScrollReveal delay={400} className="lg:col-span-2 relative group">
             <div className="h-full min-h-[500px] bg-white rounded-[40px] overflow-hidden shadow-floating border-[8px] border-white relative">
-              <iframe
-                title="Map"
-                width="100%"
-                height="100%"
-                frameBorder="0"
-                src="https://maps.google.com/maps?q=Auf%20dem%20Halmburger%2016%2C%2035043%20Marburg&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                className="filter contrast-100 opacity-90 hover:opacity-100 transition-all duration-1000"
-              ></iframe>
+              {mapLoaded ? (
+                <iframe
+                  title={t.contact.map.title}
+                  width="100%"
+                  height="100%"
+                  frameBorder="0"
+                  src={MAP_EMBED_URL}
+                  className="absolute inset-0 w-full h-full filter contrast-100 opacity-90 hover:opacity-100 transition-all duration-1000"
+                ></iframe>
+              ) : (
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-10">
+                  <div className="w-16 h-16 bg-rom-accent/10 rounded-2xl flex items-center justify-center mb-6 text-rom-accent border border-rom-accent/20">
+                    <MapPin size={28} />
+                  </div>
+                  <p className="text-gray-600 text-sm leading-relaxed max-w-sm mb-8">{t.contact.map.notice}</p>
+                  <button
+                    type="button"
+                    onClick={() => setMapLoaded(true)}
+                    className="bg-rom-black text-white px-10 py-4 rounded-2xl font-bold uppercase tracking-widest text-sm hover:bg-rom-accent hover:text-rom-black transition-all duration-300 shadow-elevated hover:shadow-floating hover:-translate-y-1"
+                  >
+                    {t.contact.map.load}
+                  </button>
+                  <Link to="/datenschutz" className="mt-6 text-xs text-gray-500 underline underline-offset-4 hover:text-rom-accent transition-colors">
+                    {t.contact.map.privacy}
+                  </Link>
+                </div>
+              )}
             </div>
           </ScrollReveal>
         </div>
-      </div >
-    </section >
+      </div>
+    </section>
   );
 };
 

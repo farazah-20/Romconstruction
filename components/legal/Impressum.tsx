@@ -1,51 +1,56 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import Rechtsseite, { Abschnitt, Platzhalter, firma } from './Rechtsseite';
 
-const Impressum: React.FC = () => {
-    useEffect(() => { window.scrollTo(0, 0); }, []);
-    return (
-        <section className="py-32 px-6 bg-rom-white min-h-screen">
-            <div className="container mx-auto max-w-3xl">
-                <h1 className="font-serif text-4xl font-bold mb-8 text-rom-black">Impressum</h1>
+const Impressum: React.FC = () => (
+    <Rechtsseite titel="Impressum">
+        <Abschnitt titel="Angaben gemäß § 5 DDG">
+            <p>
+                {firma.name}<br />
+                {firma.strasse}<br />
+                {firma.ort}
+            </p>
+        </Abschnitt>
 
-                <div className="space-y-8 text-gray-600 leading-relaxed font-light">
-                    <div>
-                        <h2 className="text-xl font-bold text-rom-black mb-4">Angaben gemäß § 5 TMG</h2>
-                        <p>
-                            Romconstruction<br />
-                            Auf dem Halmburger 16<br />
-                            35043 Marburg
-                        </p>
-                    </div>
+        <Abschnitt titel="Vertreten durch">
+            <p><Platzhalter>Geschäftsführer: vom Kunden zu ergänzen</Platzhalter></p>
+        </Abschnitt>
 
-                    <div>
-                        <h2 className="text-xl font-bold text-rom-black mb-4">Vertreten durch</h2>
-                        <p>Geschäftsführung: [Name des Geschäftsführers]</p>
-                    </div>
+        <Abschnitt titel="Kontakt">
+            <p>
+                Telefon: <a href={firma.telefonHref} className="hover:text-rom-accent transition-colors">{firma.telefon}</a><br />
+                E-Mail: <a href={`mailto:${firma.email}`} className="hover:text-rom-accent transition-colors">{firma.email}</a>
+            </p>
+        </Abschnitt>
 
-                    <div>
-                        <h2 className="text-xl font-bold text-rom-black mb-4">Kontakt</h2>
-                        <p>
-                            Telefon: +49 6421 3508081<br />
-                            E-Mail: service@romconstruction.de
-                        </p>
-                    </div>
+        <Abschnitt titel="Registereintrag">
+            <p>
+                Eintragung im Handelsregister<br />
+                Registergericht: {firma.register}<br />
+                Registernummer: {firma.hrb}
+            </p>
+        </Abschnitt>
 
-                    <div>
-                        <h2 className="text-xl font-bold text-rom-black mb-4">Umsatzsteuer-ID</h2>
-                        <p>
-                            Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
-                            [DE XXXXXXXX]
-                        </p>
-                    </div>
+        <Abschnitt titel="Umsatzsteuer-ID">
+            <p>
+                Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:<br />
+                <Platzhalter>USt-IdNr.: vom Kunden zu ergänzen</Platzhalter>
+            </p>
+        </Abschnitt>
 
-                    <div className="text-sm border-t border-gray-200 pt-8 mt-8">
-                        <p>Plattform der EU-Kommission zur Online-Streitbeilegung: https://ec.europa.eu/odr</p>
-                        <p>Wir sind zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle weder verpflichtet noch bereit.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
-};
+        <Abschnitt titel="Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV">
+            <p>
+                <Platzhalter>Verantwortlicher nach § 18 Abs. 2 MStV: vom Kunden zu ergänzen</Platzhalter><br />
+                {firma.strasse}, {firma.ort}
+            </p>
+        </Abschnitt>
+
+        <div className="text-sm border-t border-gray-200 pt-8 mt-8">
+            <p>
+                Verbraucherstreitbeilegung gemäß § 36 VSBG: Wir sind zur Teilnahme an einem
+                Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle weder verpflichtet noch bereit.
+            </p>
+        </div>
+    </Rechtsseite>
+);
 
 export default Impressum;

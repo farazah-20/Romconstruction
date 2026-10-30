@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext, ReactNode } from 'react';
+import React, { createContext, useState, useContext, useEffect, ReactNode } from 'react';
 import { translations, Language } from '../translations';
 
 interface LanguageContextType {
@@ -11,6 +11,10 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [lang, setLang] = useState<Language>('DE');
+
+    useEffect(() => {
+        document.documentElement.lang = lang.toLowerCase();
+    }, [lang]);
 
     const value = {
         lang,

@@ -13,9 +13,13 @@ const ParticlesBackground: React.FC = () => {
         let particles: Particle[] = [];
         let animationFrameId: number;
 
+        // Bei "Bewegung reduzieren" nur ein statisches Bild zeichnen.
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
         const resizeCanvas = () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
+            if (reducedMotion && particles.length) drawFrame(false);
         };
 
         window.addEventListener('resize', resizeCanvas);
@@ -68,12 +72,12 @@ const ParticlesBackground: React.FC = () => {
             }
         };
 
-        const animate = () => {
+        const drawFrame = (move: boolean) => {
             if (!ctx || !canvas) return;
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
             particles.forEach((particle, index) => {
-                particle.update();
+                if (move) particle.update();
                 particle.draw();
 
                 // Draw Orthogonal Connections (Blueprint/Girder look)
@@ -97,12 +101,19 @@ const ParticlesBackground: React.FC = () => {
                     }
                 }
             });
+        };
 
+        const animate = () => {
+            drawFrame(true);
             animationFrameId = requestAnimationFrame(animate);
         };
 
         init();
-        animate();
+        if (reducedMotion) {
+            drawFrame(false);
+        } else {
+            animate();
+        }
 
         return () => {
             window.removeEventListener('resize', resizeCanvas);

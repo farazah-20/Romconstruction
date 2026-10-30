@@ -7,7 +7,8 @@ export const translations = {
             services: 'Leistungen',
             location: 'Standort',
             project: 'Projekt anfragen',
-            legal: { impressum: 'Impressum', privacy: 'Datenschutz', terms: 'AGB' }
+            legal: { impressum: 'Impressum', privacy: 'Datenschutz' },
+            menu: { open: 'Menü öffnen', close: 'Menü schließen', language: 'Sprache' }
         },
         hero: {
             badge: 'Romconstruction | Marburg',
@@ -17,13 +18,13 @@ export const translations = {
             cta: 'Projekt anfragen'
         },
         about: {
-            experience: 'Jahre Erfahrung',
+            location: 'Firmensitz',
             company: 'Das Unternehmen',
             title: 'Bauen mit Verstand.',
             subtitle: 'Wohnen mit Gefühl.',
             text1: 'Romconstruction steht für Qualität, Termintreue und Transparenz im Bauwesen. Als modernes Bauunternehmen begleiten wir Sie bei der Realisierung Ihrer Träume.',
             text2: 'Unsere Philosophie vereint traditionelles Handwerk mit innovativen Bautechnologien. Wir schaffen Räume, die nicht nur funktional überzeugen, sondern durch Ästhetik bestechen.',
-            stats: { onTime: 'Termintreue', material: 'Materialwahl' }
+            stats: { reliable: 'Verlässlich', onTime: 'Termintreue', material: 'Materialwahl' }
         },
         services: {
             title: 'Unsere Leistungen',
@@ -40,12 +41,26 @@ export const translations = {
             address: 'Adresse',
             email: 'E-Mail',
             phone: 'Telefon',
-            reviews: 'Google Rezensionen'
+            reviews: 'Bewertungen',
+            reviewsLink: 'Auf Google ansehen',
+            map: {
+                title: 'Karte',
+                notice: 'Beim Laden der Karte werden Daten (u. a. Ihre IP-Adresse) an Google übertragen.',
+                load: 'Karte laden',
+                privacy: 'Mehr dazu in der Datenschutzerklärung'
+            }
         },
         appointment: {
             title: 'Projekt anfragen',
             subtitle: 'Schildern Sie uns Ihr Bauvorhaben.',
-            form: { name: 'Ihr Name', email: 'Ihre E-Mail', phone: 'Telefonnummer', message: 'Ihr Anliegen', send: 'Anfrage absenden' }
+            form: { name: 'Ihr Name', email: 'Ihre E-Mail', phone: 'Telefonnummer', message: 'Ihr Anliegen', send: 'Anfrage absenden' },
+            mailHint: 'Öffnet Ihr E-Mail-Programm',
+            privacyBefore: 'Ihre Angaben verwenden wir nur zur Bearbeitung Ihrer Anfrage. Details in der ',
+            privacyLink: 'Datenschutzerklärung',
+            privacyAfter: '.',
+            successTitle: 'Vielen Dank!',
+            successText: 'Ihr E-Mail-Programm wurde geöffnet. Bitte senden Sie die vorbereitete E-Mail dort ab.',
+            mailSubject: 'Projektanfrage über romconstruction.de'
         }
     },
     EN: {
@@ -54,7 +69,8 @@ export const translations = {
             services: 'Services',
             location: 'Location',
             project: 'Request Project',
-            legal: { impressum: 'Imprint', privacy: 'Privacy', terms: 'Terms' }
+            legal: { impressum: 'Imprint', privacy: 'Privacy' },
+            menu: { open: 'Open menu', close: 'Close menu', language: 'Language' }
         },
         hero: {
             badge: 'Romconstruction | Marburg',
@@ -64,13 +80,13 @@ export const translations = {
             cta: 'Request Project'
         },
         about: {
-            experience: 'Years Experience',
+            location: 'Headquarters',
             company: 'The Company',
             title: 'Building with Reason.',
             subtitle: 'Living with Feeling.',
             text1: 'Romconstruction stands for quality, punctuality, and transparency in construction. As a modern construction company, we accompany you in realizing your dreams.',
             text2: 'Our philosophy combines traditional craftsmanship with innovative construction technologies. We create spaces that are not only functional but also aesthetically pleasing.',
-            stats: { onTime: 'Punctuality', material: 'Material Selection' }
+            stats: { reliable: 'Reliable', onTime: 'Punctuality', material: 'Material Selection' }
         },
         services: {
             title: 'Our Services',
@@ -87,12 +103,26 @@ export const translations = {
             address: 'Address',
             email: 'E-Mail',
             phone: 'Phone',
-            reviews: 'Google Reviews'
+            reviews: 'Reviews',
+            reviewsLink: 'View on Google',
+            map: {
+                title: 'Map',
+                notice: 'When the map is loaded, data (including your IP address) is transmitted to Google.',
+                load: 'Load map',
+                privacy: 'More in our privacy policy'
+            }
         },
         appointment: {
             title: 'Request Project',
             subtitle: 'Tell us about your construction project.',
-            form: { name: 'Your Name', email: 'Your E-Mail', phone: 'Phone Number', message: 'Your Request', send: 'Send Request' }
+            form: { name: 'Your Name', email: 'Your E-Mail', phone: 'Phone Number', message: 'Your Request', send: 'Send Request' },
+            mailHint: 'Opens your e-mail program',
+            privacyBefore: 'We only use your details to handle your request. Details in our ',
+            privacyLink: 'privacy policy',
+            privacyAfter: '.',
+            successTitle: 'Thank you!',
+            successText: 'Your e-mail program has been opened. Please send the prepared e-mail from there.',
+            mailSubject: 'Project request via romconstruction.de'
         }
     }
 };
