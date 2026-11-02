@@ -28,7 +28,7 @@ const Rechtsseite: React.FC<{ titel: string; children: React.ReactNode }> = ({ t
     return (
         <section className="py-32 px-6 bg-rom-white min-h-screen">
             <div className="container mx-auto max-w-3xl">
-                <h1 className="font-serif text-4xl font-bold mb-8 text-rom-black">{titel}</h1>
+                <h1 className="font-serif text-3xl sm:text-4xl font-bold hyphens-auto mb-8 text-rom-black">{titel}</h1>
                 <div className="space-y-8 text-gray-600 leading-relaxed font-light">
                     {children}
                 </div>

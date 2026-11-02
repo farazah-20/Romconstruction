@@ -2,7 +2,7 @@ import React from 'react';
 import Rechtsseite, { Abschnitt, Platzhalter, firma } from './Rechtsseite';
 
 const Datenschutz: React.FC = () => (
-    <Rechtsseite titel="Datenschutzerklärung">
+    <Rechtsseite titel={"Datenschutz\u00ADerklärung"}>
         <p>Stand: Oktober 2026</p>
 
         <Abschnitt titel="1. Verantwortlicher">
